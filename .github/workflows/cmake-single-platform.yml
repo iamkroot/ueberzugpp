@@ -35,6 +35,7 @@ jobs:
     - name: libsixel
       run: |
         git clone https://github.com/saitoha/libsixel
+        cd libsixel
         ./configure
         make
         make install
