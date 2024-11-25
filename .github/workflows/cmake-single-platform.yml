@@ -26,6 +26,9 @@ jobs:
     - name: deps
       run: |
         dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+        dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+        crb enable
+        dnf config-manager --set-enabled remi
         yum update -y
         yum install -y openssl-devel libvips-devel libsixel-devel libchafa-devel libtbb-devel
 
