@@ -30,9 +30,15 @@ jobs:
         crb enable
         dnf config-manager --set-enabled remi
         yum update -y
-        dnf install -y openssl-devel vips-devel sixel-devel chafa-devel tbb-devel
+        dnf install -y openssl-devel vips-devel chafa-devel tbb-devel
         # yum install -y openssl-devel libvips-devel libsixel-devel libchafa-devel libtbb-devel
-
+    - name: libsixel
+      run: |
+        git clone https://github.com/saitoha/libsixel
+        ./configure
+        make
+        make install
+        
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
