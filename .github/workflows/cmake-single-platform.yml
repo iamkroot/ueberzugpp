@@ -30,7 +30,7 @@ jobs:
         crb enable
         dnf config-manager --set-enabled remi
         yum update -y
-        dnf install -y openssl-devel libvips-devel libsixel-devel libchafa-devel libtbb-devel
+        dnf install -y openssl-devel vips-devel sixel-devel chafa-devel tbb-devel
         # yum install -y openssl-devel libvips-devel libsixel-devel libchafa-devel libtbb-devel
 
     - name: Configure CMake
