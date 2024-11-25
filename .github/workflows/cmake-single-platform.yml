@@ -25,7 +25,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: deps
       run: |
-        dnf install -y almalinux-release-devel
+        dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+        yum update -y
         yum install -y openssl-devel libvips-devel libsixel-devel libchafa-devel libtbb-devel
 
     - name: Configure CMake
